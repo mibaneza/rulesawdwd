@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxIndexedDBService } from 'ngx-indexed-db';
 
 @Component({
   selector: 'app-rolplay',

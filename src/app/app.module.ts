@@ -8,7 +8,7 @@ import { HelloComponent } from './hello.component';
 import { TableRuleslyComponent } from './table-rulesly/table-rulesly.component';
 import { UserpunishService } from './service/userpunish.service';
 import { RolplayComponent } from './rolplay/rolplay.component';
-
+import { MaterialModule } from './material-module';
 
 const dbConfig: DBConfig  = {
   name: 'ruleslyDB',
@@ -16,7 +16,7 @@ const dbConfig: DBConfig  = {
   objectStoresMeta: [{
     store: 'rolplay-ban',
     storeConfig: { keyPath: 'id', autoIncrement: true },
-    storeSchema: [
+       storeSchema: [
       { name: 'added', keypath: 'added', options: { unique: false } },
       { name: 'type', keypath: 'type', options: { unique: false } },
       { name: 'reason', keypath: 'reason', options: { unique: false } }
@@ -25,14 +25,20 @@ const dbConfig: DBConfig  = {
 };
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ 
+    declarations: [ 
     AppComponent,
     HelloComponent,
     TableRuleslyComponent,
     RolplayComponent,
-    HttpClientModule,
-    NgxIndexedDBModule.forRoot(dbConfig) ],
+
+   ],
+  imports: [
+  BrowserModule, 
+  MaterialModule,
+  HttpClientModule,
+  FormsModule,
+   NgxIndexedDBModule.forRoot(dbConfig)  ],
+
   bootstrap:    [ AppComponent ],
   providers: [UserpunishService]
 })
