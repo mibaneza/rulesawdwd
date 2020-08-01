@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
-import { IndexedDbService } from '../service/indexed-db.service';
+import { UserpunishService } from '.././service/userpunish.service';
+import { UserPunishModel } from '.././model/user-punish-model'
 @Component({
   selector: 'app-rolplay',
   templateUrl: './rolplay.component.html',
